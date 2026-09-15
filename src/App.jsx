@@ -3,7 +3,7 @@ import quokkaImage from "./animal.png";
 
 // 지금은 내 컴퓨터에서 실행 중인 백엔드에 연결합니다.
 // 인터넷에 배포할 때 Render 주소로 연결하도록 바꿉니다.
-const API_URL = "http://localhost:8000";
+const API_URL = "https://memo-backend-tlq1.onrender.com";
 
 export default function App() {
   const [memos, setMemos] = useState([]);
