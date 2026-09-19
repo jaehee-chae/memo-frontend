@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import quokkaImage from "./animal.png";
+import quokkaImage from "./quokka-new.png";
 
 // 지금은 내 컴퓨터에서 실행 중인 백엔드에 연결합니다.
 // 인터넷에 배포할 때 Render 주소로 연결하도록 바꿉니다.
@@ -78,31 +78,105 @@ export default function App() {
       }}
     >
       <header>
-        <p>ABOUT ME · 채재희</p>
-        <h1 style={{ fontSize: 36 }}>안녕하세요, 채재희입니다!</h1>
-<img
-  src={quokkaImage}
-  alt="완주 메달을 걸고 달리는 쿼카"
-  style={{
-    width: 260,
-    maxWidth: "100%",
-    height: "auto",
-    borderRadius: 20,
-    display: "block",
-    margin: "20px auto",
-  }}
-/>
-        
-        <p>
-          KB국민카드에서 근무하고 있습니다.
-          <br />
-          취미는 러닝이며, 올해는 풀마라톤도 완주했어요!
-          <br />
-          저를 닮은 동물은 쿼카입니다.
-        </p>
-        <p>🏃‍♀️ 러닝 · 🏅 2026 풀마라톤 완주 · 🐾 쿼카</p>
-      </header>
+  <style>{`
+    @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
+    body {
+      margin: 0;
+      background: #f3efff;
+      color: #493c63;
+      font-family: 'Jua', sans-serif;
+    }
+
+    #root {
+      width: 100%;
+    }
+
+    main {
+      box-sizing: border-box;
+      background: #fcfaff !important;
+      color: #493c63 !important;
+      font-family: 'Jua', sans-serif !important;
+      box-shadow: 0 12px 40px rgba(112, 87, 151, 0.1);
+    }
+
+    input, button {
+      font-family: inherit;
+    }
+
+    .intro-title {
+      font-size: clamp(30px, 5vw, 44px);
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -1px;
+      color: #66508b;
+    }
+
+    .intro-name {
+      display: inline-block;
+      color: #bd5c82;
+      transform: rotate(-3deg);
+      border-bottom: 5px solid #f4cddd;
+    }
+
+    .running-quokka {
+      display: block;
+      width: 280px;
+      max-width: 100%;
+      height: auto;
+      margin: 28px auto;
+      border-radius: 28px;
+      animation: quokka-bounce 0.9s ease-in-out infinite;
+    }
+
+    .hobby-tags {
+      line-height: 2;
+      color: #76578c;
+    }
+
+    @keyframes quokka-bounce {
+      0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+      }
+      50% {
+        transform: translateY(-10px) rotate(2deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .running-quokka {
+        animation: none;
+      }
+    }
+  `}</style>
+
+  <p>ABOUT ME · 채재희</p>
+
+  <h1 className="intro-title">
+    안녕하세요,<br />
+    <span className="intro-name">채재희</span>입니다! 👋
+  </h1>
+
+  <img
+    className="running-quokka"
+    src={quokkaImage}
+    alt="살구색 러닝복과 리본을 착용하고 달리는 쿼카"
+  />
+
+  <p>
+    KB국민카드에서 근무하고 있습니다.
+    <br />
+    취미는 러닝이며, 올해는 풀마라톤도 완주했어요!
+    <br />
+    저를 닮은 동물은 쿼카입니다.
+    <br />
+    저는 새로운 것을 접하고 배우는 것을 좋아해요!
+  </p>
+
+  <p className="hobby-tags">
+    🏃‍♀️ 러닝 · 🏅 2026 풀마라톤 완주 · 🐾 쿼카 · 💻 코딩
+  </p>
+</header>
       <section
         id="memo"
         style={{
