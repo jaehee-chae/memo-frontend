@@ -101,7 +101,6 @@ export default function App() {
           저를 닮은 동물은 쿼카입니다.
         </p>
         <p>🏃‍♀️ 러닝 · 🏅 2026 풀마라톤 완주 · 🐾 쿼카</p>
-        <a href="#memo">메모장 연동 실습으로 이동 ↓</a>
       </header>
 
       <section
@@ -114,7 +113,7 @@ export default function App() {
       >
         <h2>📝 재희의 러닝 메모장</h2>
         <p>러닝 목표나 응원 메시지를 남겨보세요.</p>
-        <p role="status">{status}</p>
+       {status.startsWith("❌") && <p role="status">{status}</p>}
 
         <form
           onSubmit={addMemo}
